@@ -1,5 +1,7 @@
 import * as React from 'react';
 import * as PropTypes from 'prop-types';
+import {TweenLite, Circ} from "gsap/TweenMax";
+
 import SizeAndPositionManager, {ItemSize} from './SizeAndPositionManager';
 import {
   ALIGNMENT,
@@ -244,8 +246,12 @@ export default class VirtualList extends React.PureComponent<Props, State> {
 
   scrollTo(value: number) {
     const {scrollDirection = DIRECTION.VERTICAL} = this.props;
+    TweenLite.to(this.rootNode, 0.8, {
+      [scrollProp[scrollDirection]]: value, 
+      ease: Circ.easeInOut
+    });
 
-    this.rootNode[scrollProp[scrollDirection]] = value;
+    // this.rootNode[scrollProp[scrollDirection]] = value;
   }
 
   getOffsetForIndex(
