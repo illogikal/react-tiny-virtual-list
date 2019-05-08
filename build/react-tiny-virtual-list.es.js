@@ -499,7 +499,7 @@ var VirtualList = /** @class */function (_super) {
                 });
             }
         }
-        return createElement("div", __assign({ ref: this.getRef }, props, { style: wrapperStyle }), createElement("div", { style: innerStyle }, this.props.gridOverLay ? this.props.gridOverLay : null, items));
+        return createElement("div", __assign({ ref: this.getRef }, props, { style: wrapperStyle }), createElement("div", { style: innerStyle }, gridOverLay ? gridOverLay : null, items));
         var _e;
     };
     VirtualList.prototype.getNodeOffset = function () {
