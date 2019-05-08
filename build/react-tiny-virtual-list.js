@@ -461,8 +461,8 @@ var VirtualList = /** @class */function (_super) {
             stickyIndices = _a.stickyIndices,
             style = _a.style,
             width = _a.width,
-            gridOverLay = _a.gridOverLay,
-            props = __rest(_a, ["estimatedItemSize", "height", "overscanCount", "renderItem", "itemCount", "itemSize", "onItemsRendered", "onScroll", "scrollDirection", "scrollOffset", "scrollToIndex", "scrollToAlignment", "stickyIndices", "style", "width", "gridOverLay"]);
+            gridOverlay = _a.gridOverlay,
+            props = __rest(_a, ["estimatedItemSize", "height", "overscanCount", "renderItem", "itemCount", "itemSize", "onItemsRendered", "onScroll", "scrollDirection", "scrollOffset", "scrollToIndex", "scrollToAlignment", "stickyIndices", "style", "width", "gridOverlay"]);
         var offset = this.state.offset;
         var _d = this.sizeAndPositionManager.getVisibleRange({
             containerSize: this.props[sizeProp[scrollDirection]] || 0,
@@ -502,7 +502,7 @@ var VirtualList = /** @class */function (_super) {
                 });
             }
         }
-        return React.createElement("div", __assign({ ref: this.getRef }, props, { style: wrapperStyle }), React.createElement("div", { style: innerStyle }, gridOverLay ? gridOverLay : null, items));
+        return React.createElement("div", __assign({ ref: this.getRef }, props, { style: wrapperStyle }), React.createElement("div", { style: innerStyle }, gridOverlay, items));
         var _e;
     };
     VirtualList.prototype.getNodeOffset = function () {
@@ -542,7 +542,7 @@ var VirtualList = /** @class */function (_super) {
     };
     VirtualList.propTypes = {
         estimatedItemSize: PropTypes.number,
-        gridOverLay: PropTypes.node,
+        gridOverlay: PropTypes.node,
         height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
         itemCount: PropTypes.number.isRequired,
         itemSize: PropTypes.oneOfType([PropTypes.number, PropTypes.array, PropTypes.func]).isRequired,
