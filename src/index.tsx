@@ -343,7 +343,10 @@ export default class VirtualList extends React.PureComponent<Props, State> {
 
     return (
       <div ref={this.getRef} {...props} style={wrapperStyle}>
-        <div style={innerStyle}>{items}</div>
+        <div style={innerStyle}>
+          {this.props.gridOverLay ? this.props.gridOverLay : null}
+          {items}
+        </div>
       </div>
     );
   }
