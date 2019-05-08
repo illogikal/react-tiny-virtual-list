@@ -46,6 +46,7 @@ export interface RenderedRows {
 export interface Props {
   className?: string;
   estimatedItemSize?: number;
+  gridOverLay: React.ReactNode; 
   height: number | string;
   itemCount: number;
   itemSize: ItemSize;
@@ -105,6 +106,7 @@ export default class VirtualList extends React.PureComponent<Props, State> {
 
   static propTypes = {
     estimatedItemSize: PropTypes.number,
+    gridOverLay: PropTypes.node, 
     height: PropTypes.oneOfType([PropTypes.number, PropTypes.string])
       .isRequired,
     itemCount: PropTypes.number.isRequired,
@@ -289,6 +291,7 @@ export default class VirtualList extends React.PureComponent<Props, State> {
       stickyIndices,
       style,
       width,
+      gridOverLay,
       ...props
     } = this.props;
     const {offset} = this.state;
